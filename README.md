@@ -1,16 +1,16 @@
-# Single-hole I-PINN
+# I-PINN Framework
 
-Open-source reproduction package for the **single-hole inverse benchmark** of the image-constrained physics-informed neural network (I-PINN).
+Open-source implementation of **A unified image-driven physics-informed learning framework for mechanical field reconstruction and material identification**.
 
-The public code is organized as a reusable **I-PINN framework**:
+This repository is organized as a reusable **I-PINN framework**:
 
 - the framework core combines image matching and physics constraints in a two-stage inverse workflow,
 - the case definition provides geometry, dimensions, coordinates, targets, weights, and reference conventions,
 - the network backbone is injected as a separate model component,
-- the packaged single-hole benchmark is the first validated case built on top of this framework.
+- the packaged single-hole benchmark is provided as the first validated example case built on top of this framework.
 
 This release contains:
-- the reusable I-PINN framework code used by the single-hole case,
+- the reusable I-PINN framework code,
 - one ready-to-run sample case,
 - FEM reference data for quantitative evaluation,
 - final prediction results from a validated full run,
@@ -159,6 +159,10 @@ The packaged example is organized as follows:
 - `example_case/case_metadata.json`: case metadata used by the evaluation and plotting scripts
 - `results/`: final I-PINN outputs from a validated full training run
 
+This example is a **single-hole plate under tensile loading** and is included
+only as a compact, ready-to-run benchmark for demonstrating how the generic
+framework is configured and evaluated.
+
 ## Final quantitative results
 
 The validated full-run metrics are stored in:
@@ -199,9 +203,29 @@ user runs the code locally.
 
 ![Single-hole v comparison](results/final_comparison_figures/compare_v.png)
 
+**Strain `ε_xx`**
+
+![Single-hole epsilon_xx comparison](results/final_comparison_figures/compare_exx.png)
+
+**Strain `ε_xy`**
+
+![Single-hole epsilon_xy comparison](results/final_comparison_figures/compare_exy.png)
+
+**Strain `ε_yy`**
+
+![Single-hole epsilon_yy comparison](results/final_comparison_figures/compare_eyy.png)
+
 **Stress `σ_xx`**
 
 ![Single-hole sigma_xx comparison](results/final_comparison_figures/compare_sxx.png)
+
+**Stress `σ_xy`**
+
+![Single-hole sigma_xy comparison](results/final_comparison_figures/compare_sxy.png)
+
+**Stress `σ_yy`**
+
+![Single-hole sigma_yy comparison](results/final_comparison_figures/compare_syy.png)
 
 ## Visual comparison with FEM
 
@@ -241,7 +265,7 @@ Display conventions:
 
 ## Manuscript-code notes
 
-This release follows the **validated code behavior** of the single-hole benchmark.
+This release follows the **validated code behavior** of the packaged benchmark.
 
 - The code supports both `gelu` and `tanh` activations and defaults to `gelu`.
 - The stage-2 weights are implemented using a target-based static weighting strategy calibrated to recover the validated single-hole scale.
@@ -251,7 +275,7 @@ This release follows the **validated code behavior** of the single-hole benchmar
 ## Scope of this release
 
 Included:
-- single-hole main method
+- reusable I-PINN framework
 - sample data
 - evaluation script
 - plotting scripts
