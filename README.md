@@ -184,6 +184,25 @@ Key results:
 - `sigma_xy local rmse = 2.618 MPa`
 - `sigma_yy local rmse = 2.938 MPa`
 
+## Example result preview
+
+The packaged single-hole example already includes the final predicted fields,
+the FEM reference fields, and the corresponding signed difference fields. This
+lets the repository homepage show what the method actually computes before a
+user runs the code locally.
+
+**Displacement `u`**
+
+![Single-hole u comparison](results/final_comparison_figures/compare_u.png)
+
+**Displacement `v`**
+
+![Single-hole v comparison](results/final_comparison_figures/compare_v.png)
+
+**Stress `σ_xx`**
+
+![Single-hole sigma_xx comparison](results/final_comparison_figures/compare_sxx.png)
+
 ## Visual comparison with FEM
 
 The final comparison figures are stored in:
@@ -237,4 +256,3 @@ Included:
 - evaluation script
 - plotting scripts
 - validated final results
-
