@@ -1,0 +1,68 @@
+{
+  "case_name": "single_hole",
+  "image_files": {
+    "reference": "re001.bmp",
+    "deformed": "tar001.bmp"
+  },
+  "field_files": {
+    "u": {
+      "prediction": "displacement_u.csv",
+      "reference": "u001.csv"
+    },
+    "v": {
+      "prediction": "displacement_v.csv",
+      "reference": "v001.csv"
+    },
+    "exx": {
+      "prediction": "strain_xx.csv",
+      "reference": "strain_xx001.csv"
+    },
+    "exy": {
+      "prediction": "strain_xy.csv",
+      "reference": "strain_xy001.csv"
+    },
+    "eyy": {
+      "prediction": "strain_yy.csv",
+      "reference": "strain_yy001.csv"
+    },
+    "sxx": {
+      "prediction": "stress_xx.csv",
+      "reference": "stress_xx001.csv"
+    },
+    "sxy": {
+      "prediction": "stress_xy.csv",
+      "reference": "stress_xy001.csv"
+    },
+    "syy": {
+      "prediction": "stress_yy.csv",
+      "reference": "stress_yy001.csv"
+    }
+  },
+  "crop": {
+    "top": 20,
+    "bottom": 20,
+    "left": 20,
+    "right": 20
+  },
+  "hole": {
+    "center": "image_center",
+    "radius": 40.0
+  },
+  "local_region": {
+    "type": "annulus",
+    "inner_radius": 40.0,
+    "outer_radius": 60.0
+  },
+  "reference_fields": {
+    "strain_xy_kind": "engineering_shear",
+    "stress_unit": "Pa"
+  },
+  "predicted_fields": {
+    "strain_xy_kind": "tensor_shear",
+    "stress_unit": "Pa_or_normalized_gpa"
+  },
+  "true_material": {
+    "E": 3.0,
+    "nu": 0.32
+  }
+}
