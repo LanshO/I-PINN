@@ -2,6 +2,8 @@
 
 Open-source implementation of **A unified image-driven physics-informed learning framework for mechanical field reconstruction and material identification**.
 
+If you have any question, please contact us at email: lansh@ustc.edu.cn
+
 This repository is organized as a reusable **I-PINN framework**:
 
 - the framework core combines image matching and physics constraints in a two-stage inverse workflow,
